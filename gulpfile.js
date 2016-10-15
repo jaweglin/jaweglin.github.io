@@ -20,52 +20,52 @@ gulp.task('css', function () {
     mqpacker,
     cssnano
   ];
-  return gulp.src('app/src/css/*.css')
+  return gulp.src('docs/src/css/*.css')
     .pipe(postcss(processors))
     .pipe(rename('main.min.css'))
-    .pipe(gulp.dest('app/dest'));
+    .pipe(gulp.dest('docs/dest'));
 });
 
 gulp.task('nunjucks', function() {
-  return gulp.src('app/pages/*.njk')
+  return gulp.src('docs/pages/*.njk')
     // Adding data to Nunjucks
     .pipe(data(function() {
       return require('./data.json')
     }))
     .pipe(nunjucksRender({
-      path: ['app/pages/', 'app/templates/'] // String or Array
+      path: ['docs/pages/', 'docs/templates/'] // String or Array
     }))
-    .pipe(gulp.dest('app'));
+    .pipe(gulp.dest('docs'));
 });
 
 gulp.task('browser-sync', function() {
      browserSync({
           server: {
-                baseDir: "./app"
+                baseDir: "./docs"
           }
      });
 });
 
 gulp.task('scripts', function() {
-    return gulp.src('app/src/js/*.js')
+    return gulp.src('docs/src/js/*.js')
         .pipe(rename('main.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('app/dest'))
+        .pipe(gulp.dest('docs/dest'))
         .pipe(reload({stream:true}));
 });
 
 gulp.task('images', function() {
-  return gulp.src('app/src/img/**/**/*')
+  return gulp.src('docs/src/img/**/**/*')
     .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
-    .pipe(gulp.dest('app/dest/img'))
+    .pipe(gulp.dest('docs/dest/img'))
 });
 
 gulp.task('watch', function() {
-    gulp.watch('app/templates/**/*.+(njk)', ['nunjucks', reload]);
-    gulp.watch('app/**/*.+(njk)', ['nunjucks', reload]);
-    gulp.watch('app/src/**/*.css', ['css', reload]);
-    gulp.watch(['app/src/js/**/*.js','main.js'], ['scripts', reload]);
-    gulp.watch('app/src/img/**/*', ['images']);
+    gulp.watch('docs/templates/**/*.+(njk)', ['nunjucks', reload]);
+    gulp.watch('docs/**/*.+(njk)', ['nunjucks', reload]);
+    gulp.watch('docs/src/**/*.css', ['css', reload]);
+    gulp.watch(['docs/src/js/**/*.js','main.js'], ['scripts', reload]);
+    gulp.watch('docs/src/img/**/*', ['images']);
     gulp.watch("*.html", reload);
 });
 
