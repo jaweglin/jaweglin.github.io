@@ -1,0 +1,18 @@
+
+:root {
+	--color-brand: #ECE94D;
+	--color-white: #ffffff;
+	--color-black: #000000;
+
+	--spacing-main: 40px;
+
+	--spacing-letters: 50px;
+	--spacing-letters-top: 0;
+
+	--font-binary: 'binary';
+	--font-john: 'big-john';
+}
+
+@custom-media --small (width <= 767px);
+@custom-media --medium (width >= 768px) and (width <= 1000px);
+@custom-media --large (width >= 1000px);

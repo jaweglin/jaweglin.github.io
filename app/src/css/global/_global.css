@@ -1,0 +1,46 @@
+
+html,
+body,
+main {
+	height: 100%;
+	margin:0;
+}
+
+.body.frontpage {
+	overflow: hidden;
+}
+
+body {
+	color: #000; /* Variable don't work? */
+	line-height: 1.5;
+}
+
+.page-wrap {
+	@media (--large) {
+		position: relative;
+		transition: all .3s ease-in;
+	}
+}
+body.open .page-wrap {
+	@media (--large) {
+		margin-left: 350px;
+	}
+}
+
+/* TYPO TODO: Move to separate file */
+
+@font-face {
+	font-family: 'binary';
+	src: url('fonts/binary__-webfont.woff2') format('woff2'),
+	url('fonts/binary__-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'big-john';
+    src: url('fonts/bigjohn-webfont.woff2') format('woff2'),
+         url('fonts/bigjohn-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

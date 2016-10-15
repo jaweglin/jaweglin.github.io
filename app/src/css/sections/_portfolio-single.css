@@ -1,0 +1,32 @@
+
+.portfolio-single {
+	padding: 108px 40px 40px 40px;
+	text-align: center;
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.portfolio-single__headline {
+	margin: 1.5em 0 0 0;
+}
+
+.portfolio-single__role {
+	margin: 0 0 3em 0;
+	font-size: .875rem;
+	color: #999;
+}
+
+.portfolio-single__intro {
+	max-width: 55%;
+	margin: 0 auto;
+	line-height: 1.6;
+
+	@media (--small) {
+		max-width: 100%;
+	}
+}
+
+.portfolio-single__images {
+	& img {
+		max-width: 80%;
+	}
+}

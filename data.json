@@ -1,0 +1,10 @@
+
+{
+  "images": [{
+    "src": "dest/img/jennie-kantorp-weglin.jpg",
+    "alt": "Jennie Kantorp-Weglin"
+  }, {
+    "src": "dest/img/image-two.jpg",
+    "alt": "Image two alt text"
+  }]
+}
