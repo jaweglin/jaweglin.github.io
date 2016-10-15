@@ -124,7 +124,7 @@ body.open #menu {
 				width:8px;
 				position:absolute;
 				top:10%;
-				left:48px;
+				left:46px;
 				transition:.25s ease-in-out;
 				transition-delay:0s;
 			}
@@ -134,7 +134,7 @@ body.open #menu {
 				height:8px;
 				position:absolute;
 				left:10%;
-				top:48px;
+				top:46px;
 				transition:.25s ease-in-out;
 				transition-delay:.25s;
 			}
