@@ -1,6 +1,6 @@
-# nunjuck-postcss-boilerplate
+# jenzfolio2.0
 
-Just for fun, a simple setup to kickstart a front-end project. The setup includes a 
+Just for fun, a simple setup to kickstart a front-end project. The setup includes a
 basic <a href="https://mozilla.github.io/nunjucks/">Nunjuck</a> structure, <a href="http://postcss.org/">PostCSS</a> and Gulp.
 Feel free to commit your improvements.
 
