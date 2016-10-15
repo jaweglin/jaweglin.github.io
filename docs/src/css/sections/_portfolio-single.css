@@ -30,4 +30,8 @@
 		max-width: 80%;
 		margin: 40px 0;
 	}
+	& iframe
+		max-width: 80%;
+		margin: 40px 0;
+	}
 }

@@ -81,7 +81,10 @@
   <script src="dest/main.min.js"></script>
 	<script>$(document).ready(function () {
 		if ( $(window).width() > 1200) {
-				$(".th").throwable({gravity:{x:0,y:5}});
+				$(".th").throwable({
+          gravity:{x:0,y:5},
+          autostart:true
+        });
 		}
 	});</script>
 	</script>
