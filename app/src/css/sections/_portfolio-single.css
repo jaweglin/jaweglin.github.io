@@ -28,5 +28,6 @@
 .portfolio-single__images {
 	& img {
 		max-width: 80%;
+		margin: 40px 0;
 	}
 }
