@@ -30,7 +30,8 @@
 		max-width: 80%;
 		margin: 40px 0;
 	}
-	& iframe
+
+	& iframe {
 		max-width: 80%;
 		margin: 40px 0;
 	}
