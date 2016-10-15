@@ -26,9 +26,9 @@
 }
 
 .portfolio-single__images {
-	max-width: 60%;
+	max-width: 70%;
 	margin: 0 auto;
-	
+
 	& img {
 		max-width: 100%;
 		margin: 40px 0;
