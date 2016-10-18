@@ -1,0 +1,92 @@
+<!-- layout.njk -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jenzfolio2.0</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link rel="stylesheet" href="docs/dest/main.min.css">
+</head>
+<body class="frontpage">
+	<header class="header" role="banner">
+
+	<h1 class="header__logo">Jennie Kantor<span>p Wegl</span>in</h1>
+</header>
+
+	<nav class="main-menu" id="menu" role="navigation">
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="portfolio.html">Portfolio</a></li>
+		<li><a href="about.html">About</a></li>
+	</ul>
+</nav>
+
+
+	<main class="page-wrap">
+		<div id="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="cross">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+
+
+	<div class="intro">
+
+	<div class="intro__letters--mobile">
+		<img class="intro__letters-item th j" src="dest/img/letters-mobile.png" alt="">
+	</div>
+
+	<div class="intro__letters">
+		<img class="intro__letters-item th j" src="dest/img/j.png" alt="" width="298" height="451">
+		<img class="intro__letters-item th e-1" src="dest/img/e.png" alt="" width="34" height="59">
+		<img class="intro__letters-item th n-1" src="dest/img/n.png" alt="" width="35" height="60">
+		<img class="intro__letters-item th n-2" src="dest/img/n.png" alt="" width="35" height="60">
+		<img class="intro__letters-item th i-1" src="dest/img/i.png" alt="" width="10" height="59">
+		<img class="intro__letters-item th e-2" src="dest/img/e.png" alt="" width="34" height="59">
+		<img class="intro__letters-item th k" src="dest/img/k.png" alt="" width="34" height="59">
+		<img class="intro__letters-item th a" src="dest/img/a.png" alt="" width="35" height="63">
+		<img class="intro__letters-item th n-3" src="dest/img/n.png" alt="" width="35" height="60">
+		<img class="intro__letters-item th t" src="dest/img/t.png" alt="" width="35" height="59">
+		<img class="intro__letters-item th o" src="dest/img/o.png" alt="" width="39" height="59">
+		<img class="intro__letters-item th r" src="dest/img/r.png" alt="" width="35" height="59">
+		<img class="intro__letters-item th p" src="dest/img/p.png" alt="" width="35" height="59">
+		<img class="intro__letters-item th w" src="dest/img/w.png" alt="" width="60" height="59">
+		<img class="intro__letters-item th e-3" src="dest/img/e.png" alt="" width="34" height="59">
+		<img class="intro__letters-item th g" src="dest/img/g.png" alt="" width="39" height="59">
+		<img class="intro__letters-item th l" src="dest/img/l.png" alt="" width="33" height="59">
+		<img class="intro__letters-item th i-2" src="dest/img/i.png" alt="" width="10" height="59">
+		<img class="intro__letters-item th n-4" src="dest/img/n.png" alt="" width="35" height="60">
+	</div>
+	<div class="intro__img">
+		<img src="dest/img/jennie-kantorp-weglin.jpg" alt="Jennie Kantorp Weglin">
+	</div>
+</div>
+
+
+
+
+	</main>
+	<script src="docs/dest/jquery.min.js" type="text/javascript"></script>
+	<script src="docs/dest/jquery.throwable.js" type="text/javascript"></script>
+  <script src="docs/dest/main.min.js"></script>
+	<script>$(document).ready(function () {
+		if ( $(window).width() > 1200) {
+				$(".th").throwable({
+          gravity:{x:0,y:5},
+          autostart:true
+        });
+		}
+	});</script>
+	</script>
+</body>
+</html>
