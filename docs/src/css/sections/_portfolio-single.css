@@ -36,6 +36,8 @@
 	}
 
 	& iframe {
+		max-width: 95%;
+		heigth: auto;
 		margin: 40px auto;
 	}
 }
