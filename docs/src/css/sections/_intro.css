@@ -128,4 +128,10 @@
 			width: auto;
 		}
 	}
+	@media (min-width: 1200px) {
+		& img {
+			width:auto;
+			height:100%;
+		}
+	}
 }
