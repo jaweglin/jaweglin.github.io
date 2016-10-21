@@ -128,7 +128,7 @@
 			width: auto;
 		}
 	}
-	@media (min-width: 1200px) {
+	@media (--large) {
 		& img {
 			width:auto;
 			height:100%;
