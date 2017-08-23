@@ -6,7 +6,7 @@
 }
 
 .portfolio__item {
-  display: inline-block;
+	display: inline-block;
   margin-bottom: 8px;
   width: calc(50% - 4px);
 	color: var(--color-brand);
@@ -41,6 +41,12 @@
 			top: 50%;
 			transform: translateY(-50%);
 		}
+	}
+}
+
+.icons {
+	& a {
+		margin: 0 5px;
 	}
 }
 
