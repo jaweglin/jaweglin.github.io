@@ -60,7 +60,8 @@
     }
 
     .panel {
-      background:#6B0F9C;
+      position: relative;
+      background:#000000;
       box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
       color:white;
       text-align: center;
@@ -111,11 +112,27 @@
     }
     .panel p:nth-child(2) {
       font-size: 4em;
+      z-index: 100;
     }
 
     .panel.open {
       flex: 5;
       font-size: 30px;
+    }
+
+    .panel:before {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 0;
+      transition: opacity ease 1.5s;
+    }
+
+    .panel.open:before {
+      opacity: 0.5;
     }
 
   </style>
