@@ -1,0 +1,127 @@
+<!-- layout.njk -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jenzfolio2.0</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="dest/main.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<header class="header" role="banner">
+	
+	<h1 class="header__logo">Jennie Kantor<span>p Wegl</span>in</h1>
+</header>
+
+	<nav class="main-menu" id="menu" role="navigation">
+	<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><a href="portfolio.html">Portfolio</a></li>
+		<li><a href="playground.html">Playground</a></li>
+		<li><a href="about.html">About</a></li>
+	</ul>
+</nav>
+
+  <main class="page-wrap">
+		<div id="menu-toggle">
+			<div class="hamburger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<div class="cross">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+
+
+
+
+    <div class="gametext">Catch Gizmo<span class="score">0</span></div>
+    <button onClick="startGame()">Start</button>
+
+    <div class="game">
+    <div class="hole hole1">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole2">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole3">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole4">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole5">
+      <div class="mole"></div>
+    </div>
+    <div class="hole hole6">
+      <div class="mole"></div>
+    </div>
+  </div>
+
+
+
+<script>
+  const holes = document.querySelectorAll('.hole');
+  const scoreBoard = document.querySelector('.score');
+  const moles = document.querySelectorAll('.mole');
+  let lastHole;
+  let timeUp = false;
+  let score = 0;
+
+  function randomTime(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+  }
+
+  function randomHole(holes) {
+    const idx = Math.floor(Math.random() * holes.length);
+    const hole = holes[idx];
+    if (hole === lastHole) {
+      console.log('Ah nah thats the same one bud');
+      return randomHole(holes);
+    }
+    lastHole = hole;
+    return hole;
+  }
+
+  function peep() {
+    const time = randomTime(200, 2000);
+    const hole = randomHole(holes);
+    hole.classList.add('up');
+    setTimeout(() => {
+      hole.classList.remove('up');
+      if (!timeUp) peep();
+    }, time);
+  }
+
+  function startGame() {
+    scoreBoard.textContent = 0;
+    timeUp = false;
+    score = 0;
+    peep();
+    setTimeout(() => timeUp = true, 10000)
+  }
+
+  function bonk(e) {
+    if(!e.isTrusted) return; // cheater!
+    score++;
+    this.parentNode.classList.remove('up');
+    scoreBoard.textContent = score;
+  }
+
+  moles.forEach(mole => mole.addEventListener('click', bonk));
+
+</script>
+
+</main>
+	<script src="dest/jquery.min.js" type="text/javascript"></script>
+  <script src="dest/main.min.js"></script>
+	</script>
+</body>
+</html>
