@@ -69,5 +69,6 @@ button {
 .second-text {
   text-align: center;
 	margin: 0 auto;
-	line-height: 1.6;
+  line-height: 1.6;
+  padding-bottom: 20px;
 }
