@@ -66,3 +66,8 @@ button {
 .hole.up .mole {
   top:0;
 }
+.second-text {
+  text-align: center;
+	margin: 0 auto;
+	line-height: 1.6;
+}
