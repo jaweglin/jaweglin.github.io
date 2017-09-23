@@ -1,8 +1,14 @@
-html {
-  background: url('images/catwoman.png') center center;
+
+.catbeat {
+  width: 100%;
+  height: 100%;
+  background: url('img/catwoman.png') center center;
   background-size: cover;
+
 }
 body,html {
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -15,10 +21,20 @@ body,html {
   align-items: center;
   justify-content: center;
   padding: 100px;
+
+  @media (--small){
+    margin: 0;
+    width: 100%;
+    flex: 2 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
 }
 
 .key {
-  border: .4rem solid black;
+  border: .2rem solid black;
   border-radius: .5rem;
   margin: 1rem;
   font-size: 1rem;
@@ -29,6 +45,7 @@ body,html {
   color: white;
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black;
+  
 }
 
 .playing {
@@ -39,7 +56,7 @@ body,html {
 
 kbd {
   display: block;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .sound {
