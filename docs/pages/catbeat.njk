@@ -3,6 +3,7 @@
 
 {% block content %}
 
+<div class="catbeat">
   <div class="keys">
     <div data-key="65" class="key">
       <kbd>A</kbd>
@@ -28,17 +29,21 @@
       <kbd>H</kbd>
       <span class="sound">screech</span>
     </div>
-  
   </div>
-</main>
+ </div>
   
+  <div class="playing">
+  <div class="sound">
   <audio data-key="65" src="src/sounds/cat_screech.wav"></audio>
   <audio data-key="83" src="src/sounds/cat_meow2.wav"></audio>
   <audio data-key="68" src="src/sounds/cat_growl.wav"></audio>
   <audio data-key="70" src="src/sounds/cat_scream.wav"></audio>
   <audio data-key="71" src="src/sounds/cat_meow_x.wav"></audio>
   <audio data-key="72" src="src/sounds/cat_screech2.wav"></audio>
+  </div>
+  </div>
  
+ </main>
 
 <script>
 
@@ -63,10 +68,12 @@
     keys.forEach(key => key.addEventListener ('transitionend', removeTransition));
 
 </script>
+
+
 <script src="dest/jquery.min.js" type="text/javascript"></script>
 <script src="dest/main.min.js"></script>
-
 </body>
 </html>
+
 
 {% endblock %}

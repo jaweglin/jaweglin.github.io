@@ -54,7 +54,7 @@ body,html {
   box-shadow: 0 0 1rem #EE2AF4;
 }
 
-kbd {
+.kbd {
   display: block;
   font-size: 2rem;
 }
