@@ -3,7 +3,159 @@
 {% extends "layout.njk" %}
 
 {% block content %}
+  
+  <style>
+    html {
+      box-sizing: border-box;
+      background:#ffc600;
+      font-family:'helvetica neue';
+      font-weight: 200;
+    }
+    body {
+      margin: 0;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
 
-	{% include 'sections/whatido.njk' %}
+    .panels {
+      min-height:100vh;
+      overflow: hidden;
+      display: flex;
+    }
 
-{% endblock %}
+    .panel {
+      position: relative;
+      background:#000000;
+      box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+      color:white;
+      text-align: center;
+      align-items:center;
+      /* Safari transitionend event.propertyName === flex */
+      /* Chrome + FF transitionend event.propertyName === flex-grow */
+      transition:
+        font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+        background 0.2s;
+      font-size: 20px;
+      background-size:cover;
+      background-position:center;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+
+    .panel1 { background-image:url(src/img/joke.png); }
+    .panel2 { background-image:url(src/img/book.jpg); }
+    .panel3 { background-image:url(src/img/imagine.png); }
+    .panel4 { background-image:url(src/img/space.jpg); }
+    .panel5 { background-image:url(src/img/lovely.jpg); }
+
+    .panel > * {
+      margin:0;
+      width: 100%;
+      transition:transform 0.5s;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .panel > *:first-child { transform: translateY(-100%); }
+    .panel.open-active > *:first-child { transform: translateY(0); }
+    .panel > *:last-child { transform: translateY(100%); }
+    .panel.open-active > *:last-child { transform: translateY(0); }
+
+    .panel p {
+      text-transform: uppercase;
+      font-family: 'Amatic SC', cursive;
+      text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 2em;
+    
+    }
+    .panel p:nth-child(2) {
+      font-size: 4em;
+      z-index: 100;
+      
+    }
+
+    .panel.open {
+      flex: 5;
+      font-size: 30px;
+    }
+
+    .panel:before {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      opacity: 0;
+      transition: opacity ease 1.5s;
+    }
+
+    .panel.open:before {
+      opacity: 0.5;
+    }
+
+  </style>
+
+
+  <div class="panels">
+    <div class="panel panel1">
+      <p>Hi</p>
+      <p>I'm</p>
+      <p>Jenz</p>
+    </div>
+    <div class="panel panel2">
+      <p>Love</p>
+      <p>a</p>
+      <p>good book</p>
+    </div>
+    <div class="panel panel3">
+      <p>I</p>
+      <p>Crazy</p>
+      <p>?</p>
+    </div>
+    <div class="panel panel4">
+      <p>Space</p>
+      <p>Cat</p>
+      <p>Pizza</p>
+    </div>
+    <div class="panel panel5">
+      <p>Lovely</p>
+      <p>lady</p>
+      <p>friend</p>
+    </div>
+  </div>
+
+  <script>
+   const panels = document.querySelectorAll('.panel');
+   
+       function toggleOpen() {
+         console.log('Hello');
+         this.classList.toggle('open');
+       }
+   
+       function toggleActive(e) {
+         console.log(e.propertyName);
+         if (e.propertyName.includes('flex')) {
+           this.classList.toggle('open-active');
+         }
+       }
+   
+       panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+       panels.forEach(panel => panel.addEventListener('transitionend', toggleActive));
+  </script>
+
+
+
+</main>
+	<script src="dest/jquery.min.js" type="text/javascript"></script>
+  <script src="dest/main.min.js"></script>
+	</script>
+</body>
+</html>
